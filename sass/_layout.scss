@@ -1,0 +1,225 @@
+.nav {
+  .container {
+    background-color: $VeryPaleCyan;
+    display: flex;
+    padding: 1rem;
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__img {
+    width: 12rem;
+  }
+  & .btn {
+    @extend %btn;
+    color: $VeryDarkCyan;
+    background-color: $white;
+    padding: 0.5rem 1.8rem;
+  }
+}
+
+// header
+.header {
+  padding-top: 10rem;
+  background-color: $VeryPaleCyan;
+  background-image: url(../images/bg-hero-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  @include respond($tab-port) {
+    background-image: url(../images/bg-hero-desktop.svg);
+  }
+  .container {
+    padding: 1rem;
+    @include respond($tab-port) {
+      background-image: url(../images/bg-hero-desktop.svg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    & .textcontent {
+      text-align: center;
+      color: $VeryDarkCyan;
+      padding: 1rem;
+      @include respond($tab-port) {
+        text-align: left;
+      }
+      & h1 {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        margin: 1rem 0;
+      }
+      & p {
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
+      }
+    }
+    & .img--wrap {
+      max-width: 45rem;
+      margin: 0 auto;
+      & img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.features {
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+  & .feature {
+    text-align: center;
+    background-color: $white;
+    width: 100%;
+    margin: 5rem auto;
+    height: auto;
+    background-color: $white;
+    border-radius: 1.2rem;
+    padding: 1rem 1rem 5rem;
+    box-shadow: 0 2px 10px rgba(black, 0.2);
+
+    @include respond($tab-port) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row-reverse;
+      width: 80%;
+      text-align: left;
+    }
+    &:nth-child(2) {
+      @include respond($tab-port) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    & .img--wrap,
+    & .textcontent {
+      @include respond($tab-port) {
+        flex: 1;
+      }
+    }
+    & .img--wrap {
+      padding: 2rem;
+      margin: 0 auto;
+      @include respond($tab-port) {
+        max-width: 50rem;
+        width: 100%;
+      }
+      & img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    & .textcontent {
+      padding: 2rem;
+      & h1 {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+      }
+      & p {
+        // font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.cta--bottom {
+  text-align: center;
+  background-color: $white;
+  height: 15rem;
+  border-radius: 2rem;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(black, 0.2);
+  display: grid;
+  place-content: center;
+  position: relative;
+  top: 6rem;
+  transform: translate(-50%, 0);
+  left: 50%;
+  @include respond($tab-port) {
+    max-width: 60%;
+  }
+  & h1 {
+    margin-bottom: 3rem;
+  }
+}
+
+.footer {
+  padding: 10rem 1rem 3rem;
+  color: $white;
+  background-color: $VeryDarkCyan;
+  .container {
+    @include respond($tab-port) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+    }
+  }
+  .item {
+    padding: 1rem;
+    margin: 2rem 0;
+    &--link {
+      list-style: none;
+      & li {
+        margin: 1.5rem 0;
+        & a {
+          text-decoration: none;
+          color: $white;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  @include respond($tab-port) {
+    align-items: flex-start;
+  }
+  & svg {
+    border: 1px solid $white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    fill: $white;
+    height: 4rem;
+    width: 4rem;
+    margin: 0 1rem;
+    &:hover {
+      background-color: $Pink;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.img--textgrid {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  text-align: left;
+  margin: 1rem 0;
+
+  & img,
+  & p {
+    margin: 0 1rem;
+  }
+  & img {
+    margin-left: 0;
+  }
+}
+
+.copy {
+  @include respond($tab-port) {
+    grid-column: 1/-1;
+    justify-self: end;
+  }
+}

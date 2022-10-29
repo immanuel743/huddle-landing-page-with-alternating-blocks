@@ -1,0 +1,34 @@
+%btn {
+  text-decoration: none;
+  font-size: 1.4rem;
+  border-radius: 2rem;
+  display: inline-block;
+}
+.btn--pink {
+  @extend %btn;
+  color: $white;
+  background-color: $Pink;
+  padding: 1rem 7rem;
+  &:hover {
+    filter: brightness(160%);
+  }
+  &-sm {
+    @extend %btn;
+    color: $white;
+    background-color: $Pink;
+    padding: 1rem 4rem;
+    &:hover {
+      filter: brightness(160%);
+    }
+  }
+}
+
+.container {
+  padding: 1rem;
+}
+.center {
+  text-align: center;
+}
+.logo {
+  max-width: 12rem;
+}
